@@ -4,7 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const cors_1 = __importDefault(require("cors"));
+app.use((0, cors_1.default)({
+    origin: [
+        'https://campaign-management-frontend.vercel.app',
+        'https://campaign-management-frontend-git-main-surya-souravs-projects.vercel.app',
+        'https://campaign-management-frontend-dv86b4er0-surya-souravs-projects.vercel.app'
+    ]
+}));
 const campaignRoutes_1 = __importDefault(require("./routes/campaignRoutes"));
 const messageRoutes_1 = __importDefault(require("./routes/messageRoutes"));
 const app = (0, express_1.default)();
