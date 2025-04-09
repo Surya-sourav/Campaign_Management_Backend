@@ -6,7 +6,11 @@ import messageRoutes from './routes/messageRoutes';
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors(
+  {
+     origin : 'https://campaign-management-frontend.vercel.app/'
+  }
+));
 app.use(express.json());
 
 // Routes
