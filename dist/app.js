@@ -4,6 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
+const campaignRoutes_1 = __importDefault(require("./routes/campaignRoutes"));
+const messageRoutes_1 = __importDefault(require("./routes/messageRoutes"));
+const app = (0, express_1.default)();
+// Middleware
 app.use((0, cors_1.default)({
     origin: [
         'https://campaign-management-frontend.vercel.app',
@@ -11,11 +16,6 @@ app.use((0, cors_1.default)({
         'https://campaign-management-frontend-dv86b4er0-surya-souravs-projects.vercel.app'
     ]
 }));
-const campaignRoutes_1 = __importDefault(require("./routes/campaignRoutes"));
-const messageRoutes_1 = __importDefault(require("./routes/messageRoutes"));
-const app = (0, express_1.default)();
-// Middleware
-app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 // Routes
 app.use('/api/campaigns', campaignRoutes_1.default);
