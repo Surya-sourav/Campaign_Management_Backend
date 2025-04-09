@@ -8,7 +8,7 @@ const app = express();
 // Middleware
 app.use(cors(
   {
-     origin : 'https://campaign-management-frontend.vercel.app/'
+      origin : 'https://campaign-management-frontend.vercel.app/ , https://campaign-management-frontend-git-main-surya-souravs-projects.vercel.app/ , https://campaign-management-frontend-dv86b4er0-surya-souravs-projects.vercel.app/'
   }
 ));
 app.use(express.json());
